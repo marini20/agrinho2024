@@ -1,0 +1,73 @@
+class Tarefa:
+    def __init__(self, nome, prioridade, concluida=False):
+        self.nome = nome
+        self.prioridade = prioridade
+        self.concluida = concluida
+
+    def marcar_concluida(self):
+        self.concluida = True
+
+class ListaDeTarefas:
+    def __init__(self):
+        self.tarefas = []
+
+    def adicionar_tarefa(self, tarefa):
+        self.tarefas.append(tarefa)
+
+    def listar_tarefas(self):
+        for tarefa in self.tarefas:
+            print(f"{tarefa.nome} - Prioridade: {tarefa.prioridade} - Concluída: {tarefa.concluida}")
+
+# Exemplo de uso
+lista = ListaDeTarefas()
+lista.adicionar_tarefa(Tarefa("Fazer compras", "Alta"))
+lista.adicionar_tarefa(Tarefa("Estudar para prova", "Média"))
+lista.listar_tarefas()
+class Transacao:
+    def __init__(self, descricao, valor):
+        self.descricao = descricao
+        self.valor = valor
+
+class Orçamento:
+    def __init__(self, saldo_inicial):
+        self.saldo = saldo_inicial
+        self.transacoes = []
+
+    def adicionar_transacao(self, transacao):
+        self.transacoes.append(transacao)
+        self.saldo -= transacao.valor
+
+    def mostrar_transacoes(self):
+        for transacao in self.transacoes:
+            print(f"{transacao.descricao}: ${transacao.valor}")
+
+# Exemplo de uso
+orçamento = Orçamento(1000)
+orçamento.adicionar_transacao(Transacao("Compras de supermercado", 150))
+orçamento.adicionar_transacao(Transacao("Gasolina", 50))
+orçamento.mostrar_transacoes()
+print(f"Saldo restante: ${orçamento.saldo}")
+class ListaDeCompras:
+    def __init__(self):
+        self.itens = []
+
+    def adicionar_item(self, item):
+        self.itens.append(item)
+
+    def remover_item(self, item):
+        if item in self.itens:
+            self.itens.remove(item)
+
+    def limpar_lista(self):
+        self.itens = []
+
+    def mostrar_lista(self):
+        for item in self.itens:
+            print(item)
+
+# Exemplo de uso
+lista_de_compras = ListaDeCompras()
+lista_de_compras.adicionar_item("Maçãs")
+lista_de_compras.adicionar_item("Leite")
+lista_de_compras.adicionar_item("Pão")
+lista_de_compras.mostrar_lista()
