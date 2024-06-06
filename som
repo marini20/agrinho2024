@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Quiz do Agrinho</title>
+</head>
+<body>
+
+<!-- Botão para tocar o som -->
+<button onclick="playSound()">Clique para ouvir o som</button>
+
+<!-- Áudio escondido -->
+<audio id="myAudio">
+  <source src="caminho/do/seu/arquivo/de/audio.mp3" type="audio/mp3">
+  Your browser does not support the audio element.
+</audio>
+
+<script>
+function playSound() {
+  var audio = document.getElementById("myAudio");
+  audio.play();
+}
+</script>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Quiz do Agrinho</title>
+</head>
+<body>
+
+<!-- Botão para responder à pergunta -->
+<button onclick="responderPergunta()">Responder</button>
+
+<!-- Áudio escondido para quando uma pergunta é respondida corretamente -->
+<audio id="respostaCorretaAudio" src="caminho/do/seu/arquivo/de/audio.mp3" preload="auto"></audio>
+
+<script>
+function responderPergunta() {
+  // Aqui você adicionaria a lógica para verificar se a resposta está correta
+  var respostaCorreta = true; // Supondo que a resposta está correta
+
+  if (respostaCorreta) {
+    // Se a resposta estiver correta, reproduzir o som
+    var audio = document.getElementById("respostaCorretaAudio");
+    audio.play();
+  } else {
+    // Caso contrário, faça algo diferente
+  }
+}
+</script>
+
+</body>
+</html>
